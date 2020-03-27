@@ -1,0 +1,239 @@
+section.home-banner
+    .swiper-container
+        .swiper-wrapper
+            .swiper-slide
+                .item
+                    .image
+                        img(src="./img/home/banner.png", alt="")
+                    h1.title Phát huy và ứng dụng thành công những kinh nghiệm từ thực tế vào mỗi dự án
+section.home-1.main-section
+    .container
+        .main-wrap
+            .image-wrap
+                img(src="./img/home/1.png", alt="")
+            .content-wrap
+                h2.main-title.leaf.mb-1 Green Message
+                p.mb-1 Chúng tôi chuyên tư vấn chính sách quản lí môi trường, cung cấp các giải pháp, thiết bị công nghệ xử lí tối ưu nhằm giải quyết các vấn đề ô nhiễm và bảo vệ môi trường.
+                p
+                    span Công Ty TNHH Công Nghệ Môi Trường Thông Điệp Xanh là một trong những doanh nghiệp hoạt động trong lĩnh vực Nước và Môi Trường. Mỗi một công trình kinh nghiệm chúng tôi đã và đang thực hiện là kết tinh tâm huyết nghề nghiệp và lòng nhiệt huyết, khát khao phục vụ khách hàng - cộng đồng - xã hội một cách trung thực, tinh tế và khoa học.
+                a.main-btn.mt-2.plus(href="#") Về chúng tôi
+section.home-2.main-section(setBackgroundRepeat='./img/home/bg-2.png')
+    .container
+        h2.main-title.leaf.white.text-center.mb-2.mb-lg-3 Dịch vụ
+        .row.custom
+            .col-lg-3
+                .item
+                    figure
+                        .image
+                            a(href="#")
+                                img(src="./img/home/2.png", alt="")
+                        figcaption
+                            h5
+                                a(href="#") Tư vấn môi trường
+                .item
+                    figure
+                        .image
+                            a(href="#")
+                                img(src="./img/home/2.png", alt="")
+                        figcaption
+                            h5
+                                a(href="#") Báo cáo giám sát môi trường
+            .col-lg-6
+                .item.big-item
+                    figure
+                        .image
+                            a(href="#")
+                                img(src="./img/home/2.png", alt="")
+                        figcaption
+                            h5
+                                a(href="#") Tư vấn môi trường
+            .col-lg-3
+                .item
+                    figure
+                        .image
+                            a(href="#")
+                                img(src="./img/home/2.png", alt="")
+                        figcaption
+                            h5
+                                a(href="#") Tư vấn môi trường
+                .item
+                    figure
+                        .image
+                            a(href="#")
+                                img(src="./img/home/2.png", alt="")
+                        figcaption
+                            h5
+                                a(href="#") Thi công lắp đặt tấm pin năng lượng mặt trời
+        .text-center.mt-2
+            a.main-btn.plus.white(href="#") Về chúng tôi
+section.home-3.main-section(setBackgroundRepeat='./img/home/bg-3.png')
+    .container
+        h2.main-title.leaf.text-center.mb-1.mb-lg-2 Sản phẩm
+        .main-tab
+            .tab-nav
+                .item(data-id='1') Sản phẩm môi trường
+                .item(data-id='2') Sản phẩm dân dụng
+            .tab-content.mt-2.mt-3
+                .item(data-id='1')
+                    .list-item
+                        .row
+                            -for(i=0;i<4;i++)
+                                .col-sm-6.col-lg-3
+                                    .product-item
+                                        a(href="#")
+                                            figure
+                                                .image
+                                                    img(src="./img/home/3.png", alt="")
+                                                figcaption
+                                                    h5 Bio Feeda
+                            -for(i=0;i<4;i++)
+                                .col-sm-6.col-lg-3
+                                    .product-item
+                                        a(href="#")
+                                            figure
+                                                .image
+                                                    img(src="./img/home/4.png", alt="")
+                                                figcaption
+                                                    h5 Bio Feeda
+                    .text-center
+                        a(href="#").main-btn.plus Xem tất cả
+                .item(data-id='2')
+                    .list-item
+                        .row
+                            -for(i=0;i<4;i++)
+                                .col-sm-6.col-lg-3
+                                    .product-item
+                                        a(href="#")
+                                            figure
+                                                .image
+                                                    img(src="./img/home/3.png", alt="")
+                                                figcaption
+                                                    h5 Bio Feeda
+                            -for(i=0;i<4;i++)
+                                .col-sm-6.col-lg-3
+                                    .product-item
+                                        a(href="#")
+                                            figure
+                                                .image
+                                                    img(src="./img/home/4.png", alt="")
+                                                figcaption
+                                                    h5 Bio Feeda
+                    .text-center
+                        a(href="#").main-btn.plus Xem tất cả
+section.home-4.main-section(setBackground='./img/home/bg-4.png')
+    .container
+        h2.main-title.leaf.text-center.white.mb-2.mb-lg-3 Công trình kinh nghiệm
+        .experience-wrap
+            .swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        .item
+                            figure
+                                .image
+                                    a(href="#")
+                                        img(src="./img/home/5.png", alt="")
+                                .title
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    
+                                figcaption
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    a.main-btn.white.plus.mt-1(href="#") Xem chi tiết
+                    .swiper-slide
+                        .item
+                            figure
+                                .image
+                                    a(href="#")
+                                        img(src="./img/home/5.png", alt="")
+                                .title
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    
+                                figcaption
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    a.main-btn.white.plus.mt-1(href="#") Xem chi tiết
+                    .swiper-slide
+                        .item
+                            figure
+                                .image
+                                    a(href="#")
+                                        img(src="./img/home/5.png", alt="")
+                                .title
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    
+                                figcaption
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    a.main-btn.white.plus.mt-1(href="#") Xem chi tiết
+                    .swiper-slide
+                        .item
+                            figure
+                                .image
+                                    a(href="#")
+                                        img(src="./img/home/5.png", alt="")
+                                .title
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    
+                                figcaption
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    a.main-btn.white.plus.mt-1(href="#") Xem chi tiết
+            .swiper-navigation.mt-3
+                .swiper-prev
+                    img(src="./img/left.png", alt="")
+                .swiper-next
+                    img(src="./img/right.png", alt="")
+section.information-block
+    .container
+        .row
+            .col-lg-6
+                .information-wrap
+                    h4.title CÔNG TY TNHH CÔNG NGHỆ MÔI TRƯỜNG THÔNG ĐIỆP XANH
+                    p
+                        b Địa chỉ: 
+                        | 20G Phan Văn Sửu, Phường 13, Quận Tân Bình, Tp. Hồ Chí Minh
+                    p
+                        b Tel: 
+                        | (84.028) 3814 3583
+                    p
+                        b Fax: 
+                        | (84.028) 3814 3591
+                    p
+                        b Email: 
+                        | thongdiepxanh@gmail.com
+                    p
+                        b Hotline: 
+                        | 0903. 926. 077
+            .col-lg-6
+                .subcribe-wrap
+                    h4.title đăng ký nhận bản tin
+                    p.note Đăng ký ngay để nhận thông tin mới nhất từ Thông Điệp Xanh
+                    .brochure-wrap
+                        figure
+                            .image
+                                img(src="./img/logo.png", alt="")
+                            figcaption(setBackgroundRepeat='./img/bg-1.png')
+                                h5 Brochure Thông điệp xanh
+                                a(href="#")
+                                    em.mdi.mdi-download
+                                    | Download

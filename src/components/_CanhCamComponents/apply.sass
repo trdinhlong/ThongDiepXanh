@@ -1,0 +1,218 @@
+.apply-frm
+	font-size: 14px
+	overflow-x: hidden
+	color: $text
+	line-height: 1.5
+	font-family: 'Roboto'
+	margin: 0
+	>div
+		width: 100%
+	#ctl00_phMain_jobApply_pnlNewComment
+		position: relative
+		display: flex
+		flex-wrap: wrap
+		>.form-group
+			width: 100%
+		.col-left,.col-right
+			flex: 0 0 100%
+			max-width: 100%
+			display: flex
+			flex-wrap: wrap
+			>.form-group
+				margin-bottom: 10px
+			@media (min-width: 576px)
+				// margin: 0 -10px
+				>.form-group
+					padding: 0 10px
+			
+	.col-left
+		>.form-group
+			flex: 0 0 100%
+			max-width: 100%
+			@media (min-width: 576px)
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4)
+					flex: 0 0 50%
+					max-width: 50%
+	.col-right
+		>.form-group
+			flex: 0 0 100%
+			max-width: 100%
+			@media (min-width: 576px)
+				&.attachfile1,
+				&.attachfile2
+					flex: 0 0 50%
+					max-width: 50%
+
+	h4
+		font-size: +r(24px)
+		font-weight: 600
+		color: $extra
+		text-transform: uppercase
+		margin-bottom: 20px
+		@media (min-width: 992px)
+			width: 100%
+	.fa-exclamation-triangle
+		top: 50%
+		transform: translateY(-50%)
+		right: 15px
+		color: red
+	.label
+		font-size: 14px
+		font-weight: 400
+		color: #999999
+		margin-bottom: 4px
+		.required
+			color: red
+	input[type="text"], input[type="password"], textarea
+		width: 100%
+		border: 1px solid #e5e5e5
+		color: lighten(black, 20%)
+		font-size: 14px
+		border-radius: 5px
+		padding: 8px 15px
+		font-family: 'Bai Jamjuree',sans-serif
+		&:focus
+			border-color: $extra
+			outline: none
+	input[type="text"],input[type="password"]
+		// height: 50px
+	textarea
+		height: 50px
+	.RadAsyncUpload
+		.ruDropZone
+			display: none
+		.ruFileWrap
+			position: relative
+			display: block
+			height: 50px
+		.ruFileInput, .ruBrowse
+			width: 120px
+			height: 30px
+			background: #e5e5e5
+			text-transform: uppercase
+			font-size: 14px
+			color: #666
+			display: flex
+			justify-content: center
+			border-radius: 30px
+			align-items: center
+			border: 0
+		.ruFileInput
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0
+	.frm-btn
+		margin-top: 20px
+		text-align: left
+		input[type="submit"]
+			height: 40px
+			width: 100%
+			max-width: 180px
+			display: inline-flex
+			justify-content: center
+			align-items: center
+			border-radius: 0
+			border: 0
+			background: #ed7d31
+			color: #fff
+			text-transform: uppercase
+	.RadUpload
+		width: auto!important
+
+.form-apply
+	height: 740px!important
+	display: none
+	margin-top: 40px
+	padding: 0
+	@media (min-width: 623px)
+		height: 420px!important
+	iframe
+		border: 0
+		background: white
+		width: 100%
+		height: 100%
+.popup-wrapper
+	-webkit-transition: all .4s ease-in-out
+	-o-transition: .4s ease-in-out all
+	-webkit-box-pack: center
+	-ms-flex-pack: center
+	-webkit-box-align: center
+	-ms-flex-align: center
+	display: -webkit-box
+	display: -ms-flexbox
+	display: flex
+	position: fixed
+	top: 0
+	left: 0
+	align-items: center
+	justify-content: center
+	opacity: 0
+	z-index: 3334
+	transition: all .4s ease-in-out
+	background: rgba(0, 0, 0, 0.7)
+	width: 100%
+	height: 100vh
+	pointer-events: none
+
+	&.active
+		opacity: 1
+		pointer-events: auto
+
+	.popup-main
+		position: relative
+		background: #fff
+		padding: 10px
+		height: 500px
+
+		&::-webkit-scrollbar
+			-webkit-transition: all .5s ease-in-out
+			-o-transition: all .5s ease-in-out
+			transition: all .5s ease-in-out
+			width: 4px
+
+		&::-webkit-scrollbar-track
+			background: #fff
+
+		&::-webkit-scrollbar-thumb
+			background: #333
+
+		iframe
+			border: 0
+			width: 100%
+			height: 100%
+
+	.close-button
+		-webkit-box-pack: center
+		-ms-flex-pack: center
+		-webkit-box-align: center
+		-ms-flex-align: center
+		display: -webkit-box
+		display: -ms-flexbox
+		display: flex
+		position: absolute
+		right: 1px
+		top: 1px
+		align-items: center
+		justify-content: center
+		background: $extra
+		width: 50px
+		height: 50px
+		cursor: pointer
+		color: #fff
+		font-size: 34px
+
+		em
+			line-height: 1
+@media (min-width: 1025px)
+	.popup-wrapper .popup-main
+		padding: 30px
+		width: calc(100% - 50px)
+		height: 600px
+		.close-button
+			top: 0
+			right: 0
+			bottom: auto

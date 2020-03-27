@@ -1,0 +1,67 @@
+@function r($size)
+	@return ($size/16px)*1rem
+
+=line($line)
+	-webkit-line-clamp: $line
+	overflow: hidden
+	display: -webkit-box
+	text-overflow: ellipsis
+	-webkit-box-orient: vertical
+=bg-img($bg)
+	background: url($bg)
+	background-size: cover
+	background-position: cover cover
+=mdi($content)
+	content: $content
+	font-size: inherit
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	line-height: inherit
+	text-rendering: auto
+	display: inline-block
+	-webkit-font-smoothing: antialiased
+	font-family: "Material Design Icons"
+=lnr($content)
+	content: $content
+	speak: none
+	line-height: 1
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	-webkit-font-smoothing: antialiased
+	font-family: 'Linearicons-Free'
+=flex-center()
+	display: flex
+	justify-content: center
+	align-items: center
+=wh($size) 
+	width: $size
+	height: $size
+=circle($size) 
+	width: $size
+	height: $size
+	line-height: $size
+	text-align: center
+	border-radius: 50%
+=img-scale($ratio)
+	padding-top: $ratio
+	display: block
+	position: relative
+    overflow: hidden
+	img
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: cover
+// button
+=button($bg)
+	background: $bg
+	&:hover
+		background:darken($bg,8%)
+		transition: all 0.3s ease
+	&:active 
+		background:darken($bg,25%)

@@ -1,0 +1,286 @@
+.home-banner
+    .item
+        position: relative
+        .title
+            font-size: 18px
+            position: absolute
+            left: 50%
+            bottom: 30px
+            transform: translateX(-50%)
+            width: 100%
+            margin: 0 auto
+            text-align: center
+            padding: 0 10px
+            text-shadow: 1px 1.732px 5px rgba(0, 0, 0, 0.25)
+            max-width: 90%
+            color: #fff
+            font-weight: 500
+        .image
+            position: relative
+            img
+                width: 100%
+                max-height: calc(100vh - 102px)
+            &::after
+                content: ''
+                width: 100%
+                height: 100%
+                pointer-events: none
+                background: linear-gradient(to top, rgba(0,0,0,.5), transparent)
+                position: absolute
+                left: 0
+                width: 100%
+    @media(min-width: 768px)
+        .item
+            .title
+                font-size: 42px
+                bottom: 70px
+                max-width: 830px
+.home-1
+    background: #f5f5f5
+    position: relative
+    &::before
+        content: url('../img/home/after.png')
+        position: absolute
+        right: 0
+        bottom: 0
+    .main-wrap
+        .image-wrap
+            img
+                width: 100%
+                height: 100%
+        .content-wrap
+            padding: 20px 0
+            p
+                line-height: 1.1
+                font-size: +r(24px)
+                span
+                    font-size: +r(18px)
+                    color: #666666
+    @media(min-width: 1025px)
+        .main-wrap
+            display: flex
+            &>div
+                flex: 0 0 50%
+            .content-wrap
+                padding: 40px
+    @media(min-width: 1200px)
+        .main-wrap
+            .content-wrap
+                padding: 50px
+.home-2
+    .item
+        margin-bottom: 10px
+        figure
+            border-radius: 25px
+            border: 1px solid #fff
+            overflow: hidden
+            .image
+                img
+                    width: 100%
+            figcaption
+                background: #fff
+                padding: 20px
+                display: flex
+                flex-direction: column
+                justify-content: center
+                h5
+                    display: flex
+                    line-height: 1.2
+                    align-items: center
+                    transition: .4s ease-in-out all
+                    justify-content: space-between
+                    font-size: +r(20px)
+                    &::after
+                        content: '\e876'
+                        font-family: Linearicons-Free
+                        font-size: +r(18px)
+                        color: $main
+                        padding-left: 5px
+        &:hover
+            figure
+                figcaption
+                    h5
+                        color: $main
+    @media(min-width: 1025px)
+        .item:not(.big-item)
+            figure
+                .image
+                    img
+                        max-height: 200px
+        .item.big-item
+            height: calc(100% - 10px)
+            figure
+                height: 100%
+                display: flex
+                flex-direction: column
+                .image
+                    flex: 1
+                    img
+                        height: 100%
+                        max-height: 500px
+                figcaption
+                    h5
+                        font-size: 30px
+.home-3
+    .main-tab
+        text-align: center
+        margin: 0 -5px
+        .tab-nav
+            .item
+                display: inline-block
+                font-size: 14px
+                padding: 10px 20px
+                border: 1px solid $main
+                color: $main
+                margin: 0 5px
+                line-height: 1
+                border-radius: 40px
+                &.active
+                    background: $main
+                    color: #fff
+        .product-item
+            margin-bottom: 30px
+            figure
+                border-radius: 25px
+                overflow: hidden
+                border: 2px solid #fff
+                .image
+                    padding: 40px
+                    background: #e7f0e1
+                    img
+                        height: 130px
+                figcaption
+                    transition: .4s ease-in-out all
+                    background: #fff
+                    text-align: center
+                    padding: 10px
+                    h5
+                        font-size: 15px
+                        transition: .4s ease-in-out all
+                        color: $main
+                        text-transform: uppercase
+                        font-weight: 500
+                &:hover
+                    figcaption
+                        background: $main
+                        h5
+                            color: #fff
+        .tab-content
+            .item
+                display: none
+                &.active
+                    display: block
+    @media(min-width: 768px)
+        .main-tab
+            .tab-nav
+                .item
+                    font-size: +r(24px)
+                    padding: 10px 30px
+                    cursor: pointer
+                    user-select: none
+.home-4
+    .experience-wrap
+        position: relative
+    .item
+        figure
+            border-radius: 20px
+            overflow: hidden
+            border: 3px solid #fff
+            position: relative
+            .image
+                background: #000000
+                img
+                    width: 100%
+                    opacity: .6
+            figcaption
+                position: absolute
+                top: 0
+                left: 0
+                pointer-events: none
+                opacity: 0
+                width: 100%
+                height: 100%
+                transition: .4s ease-in-out all
+                background: rgba($main,.9)
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                text-align: center
+                color: #fff
+            .title
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                padding: 20px
+                color: #fff
+            &:hover
+                figcaption
+                    opacity: 1
+                    pointer-events: initial
+                .title
+                    top: 100%
+                    bottom: auto
+.information-block
+    padding: 30px 0
+    background: #e7f0e1
+    @media(min-width: 1025px)
+        padding: 50px 0
+    .title
+        padding-top: 10px
+        margin-bottom: 15px
+        position: relative
+        font-size: +r(18px)
+        text-transform: uppercase
+        &::after
+            content: ''
+            width: 20px
+            height: 2px
+            background: $main
+            position: absolute
+            top: 0
+            left: 0
+    .information-wrap
+        p
+            margin-bottom: 10px
+            &:last-child
+                margin-bottom: 0
+    .subcribe-wrap
+        margin-top: 20px
+        @media(min-width: 1025px)
+            margin-top: 0
+            padding-left: 10%
+        .title
+            margin-bottom: 5px
+        .note
+            font-size: 14px
+        .brochure-wrap
+            margin-top: 20px
+            figure
+                border-radius: 5px
+                display: flex
+                overflow: hidden
+                .image
+                    padding: 5px 10px
+                    background: #ffffff
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                figcaption
+                    width: 100%
+                    padding: 15px 20px
+                    h5
+                        font-size: 1rem
+                        text-transform: uppercase
+                        color: $main
+                    a
+                        display: inline-flex
+                        align-items: center
+                        transition: .4s ease-in-out all
+                        em
+                            color: $main
+                            font-size: +r(22px)
+                            margin-right: 5px
+                        &:hover
+                            color: $main
