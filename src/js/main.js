@@ -106,6 +106,29 @@ function initSlider() {
             }
         }
     })
+    let otherProjectCarousel = new Swiper('.du-an-ct-2 .swiper-container', {
+        slidesPerView: 4,
+        speed: 1000,
+        autoplay: {
+            delay: 5000
+        },
+        spaceBetween: 15,
+        navigation: {
+            nextEl: '.du-an-ct-2 .swiper-next',
+            prevEl: '.du-an-ct-2 .swiper-prev'
+        },
+        breakpoints: {
+            1025: {
+                slidesPerView: 3
+            },
+            768: {
+                slidesPerView: 2
+            },
+            576: {
+                slidesPerView: 1
+            }
+        }
+    })
     var productThumbs = new Swiper('.san-pham-ct-1 .thumb-image .swiper-container', {
         spaceBetween: 10,
         slidesPerView: 4,

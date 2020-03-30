@@ -410,20 +410,19 @@ main
                 display: inline-flex
                 align-items: center
                 justify-content: center
-                width: 30px
-                height: 30px
-                border-radius: 50%
-                font-size: 14px
+                font-size: 10px
                 color: #fff
+                width: 40px
+                height: 15px
+            &.tw
+                a
+                    background: #3c9cd8
             &.fb
                 a
-                    background: #2e3192
-            &.yt
+                    background: #395aa1
+            &.pr
                 a
-                    background: #ed1c24
-            &.zl
-                a
-                    background: #00bff3
+                    background: #a3b4bb
 .news-item
     height: calc(100% - 30px)
     margin-bottom: 30px
@@ -566,6 +565,12 @@ main
                     font-size: +r(18px)
                     color: $main
                     padding-left: 1.125rem
+                a
+                    -webkit-line-clamp: 2
+                    overflow: hidden
+                    display: -webkit-box
+                    text-overflow: ellipsis
+                    -webkit-box-orient: vertical
     &:hover
         figure
             figcaption
@@ -579,3 +584,24 @@ main
                     max-height: 200px
     .col-lg-custom
         flex: 0 0 20%
+.sidebar-wrap
+    border: 1px solid #d1d1d1
+    .heading
+        font-size: 1.5rem
+        text-align: center
+        text-transform: uppercase
+        padding: 10px
+        background: #75985d
+        color: #fff
+    ul
+        background: #f3f3f3
+        li
+            a
+                display: block
+                padding: 10px 20px
+                font-size: 1.125rem
+            + li
+                border-top: 1px solid #d1d1d1
+            &:hover, &.active
+                a
+                    color: $main

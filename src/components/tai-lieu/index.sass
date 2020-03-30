@@ -1,0 +1,32 @@
+.tai-lieu
+    .table
+        max-width: 100%
+        overflow-x: auto
+        table
+            border: 1px solid #d1d1d1
+            width: 100%
+            font-size: +r(18px)
+            thead
+                background: #d5d5d5
+                th
+                    font-weight: 700
+                    text-transform: uppercase
+                    text-align: center
+                    &:nth-child(2)
+                        text-align: left
+            tbody
+                td
+                    text-align: center
+                    &:nth-child(2)
+                        text-align: left
+                tr:nth-child(even)
+                    background: #f8f8f8
+                a
+                    color: $main
+            th,td
+                border-left: 1px solid #d1d1d1
+                padding: 15px
+    .sidebar-wrap
+        margin-bottom: 30px
+        @media(min-width: 1025px)
+            margin-bottom: 0

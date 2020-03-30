@@ -1,0 +1,54 @@
+.tuyen-dung-1
+    .wrapper
+        .content
+            padding: 20px
+            h1
+                &::before
+                    margin-left: 0
+            p
+                font-size: +r(18px)
+                margin-bottom: 15px
+        .image
+            img
+                height: 100%
+                width: 100%
+    @media(min-width: 1025px)
+        .wrapper
+            display: flex
+            &>div
+                flex: 0 0 50%
+            .content
+                padding: 50px
+                order: 1
+            .image
+                order: 2
+    @media(min-width: 1200px)
+        .wrapper
+            .content
+                padding: 70px
+                padding-left: calc((100vw - 1240px) / 2 + 15px)
+.tuyen-dung-2
+    .table
+        max-width: 100%
+        overflow-x: auto
+        table
+            width: 100%
+            th,td 
+                padding: 15px
+                text-align: center
+                font-size: +r(18px)
+                border-right: 1px solid #d1d1d1
+                border-bottom: 1px solid #d1d1d1
+                &:last-child
+                    border-right: 0
+            tr
+                &:last-child
+                    td
+                        border-bottom: 0
+                &:hover
+                    color: $main
+            th
+                font-weight: 700
+                background: #75985d
+                color: #fff
+            border: 1px solid $main
