@@ -83,10 +83,33 @@ function initSlider() {
             }
         }
     })
+    let categoryCarousel = new Swiper('.san-pham-ds .category-list .swiper-container',{
+        slidesPerView: 9,
+        speed: 1000,
+        autoplay: {
+            delay: 5000
+        },
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.san-pham-ds .category-list .swiper-next',
+            prevEl: '.san-pham-ds .category-list .swiper-prev'
+        },
+        breakpoints: {
+            1025: {
+                slidesPerView: 7
+            },
+            768: {
+                slidesPerView: 5
+            },
+            576: {
+                slidesPerView: 4
+            }
+        }
+    })
 }
 
 function initHeight() {
-    App.equalHeightElement('.home-2 .item figure figcaption')
+    App.equalHeightElement('.home-2 .service-item figure figcaption')
 }
 function toggleMenu(){
     $('header .btn-openmenu').on('click',function(){

@@ -1,0 +1,106 @@
+.gioi-thieu-1
+    position: relative
+    .image-wrap
+        display: flex
+        align-items: flex-end
+        @media(min-width: 1025px)
+            width: 90%
+        // margin: 0 -10px
+        .big-image
+            flex: 2
+            border-top-right-radius: 100px
+            border-bottom-left-radius: 100px
+            box-shadow: -6px 6px $main
+            @media(min-width: 576px)
+                border-top-right-radius: 250px
+                border-bottom-left-radius: 250px
+        .small-image
+            flex: 1
+            border-top-left-radius: 50px
+            border-bottom-right-radius: 50px
+            @media(min-width: 576px)
+                border-top-left-radius: 140px
+                border-bottom-right-radius: 140px
+            box-shadow: 6px 6px $main
+        .big-image, .small-image
+            // margin: 0 10px
+            border: 2px solid #fff
+            overflow: hidden
+            img
+                width: 100%
+            // +img-scale(100%)
+    .content-wrap
+        .text
+            @media(min-width: 1025px)
+                padding-right: 50px
+            max-height: 350px
+            overflow-y: auto
+            &::-webkit-scrollbar
+                border-radius: 5px
+                width: 4px
+            &::-webkit-scrollbar-track
+                background: #d7d7d7
+            &::-webkit-scrollbar-thumb
+                background: #76c900
+            p
+                font-size: +r(17px)
+                color: #666
+                + p
+                    margin-top: 20px
+    &::before
+        content: url('../img/home/after.png')
+        position: absolute
+        filter: grayscale(1)
+        right: 0
+        bottom: 0
+.gioi-thieu-2
+    .main-list
+        .service-item
+            margin-bottom: 30px
+            figure
+                .image
+                    img
+                        max-height: initial
+                figcaption
+                    padding: 30px 10px
+                    h5
+                        font-size: +r(20px)
+                        justify-content: center
+                        text-align: center
+                        &::after
+                            display: none
+            &:not(.big-item)
+                figure
+                    .image
+                        +img-scale(190/280*100%)
+            &.big-item
+                height: calc(100% - 30px)
+                figure
+                    height: 100%
+                    .image
+                        height: 100%
+                        max-height: 482px
+                        img
+                            height: 100%
+                    figcaption
+                        h5
+                            @media(min-width: 1025px)
+                                font-size: +r(30px)
+.gioi-thieu-3
+    &::before
+        display: none
+    .image-wrap
+        width: 100%
+    @media(min-width: 1025px)
+        .row
+            display: flex
+            &>div:nth-child(1)
+                order: 2
+    .content-wrap
+        .main-title
+            &::before
+                margin-left: 0
+        .text
+            max-height: 400px
+            strong
+                color: $main

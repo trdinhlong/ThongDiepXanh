@@ -155,9 +155,10 @@ main
         -webkit-appearance: none
         -moz-appearance: none
         padding: 6px 10px
-        border: 1px solid #d5d5d5
         width: 100%
-        border-radius: 4px
+        background: #f1f1f1
+        border: 0
+        // border-radius: 4px
         color: #666666
         &:focus
             outline: none
@@ -216,10 +217,11 @@ main
                 td, th
                     padding: 15px 30px
 .main-navigation
-    padding-top: 20px
+    // padding-top: 20px
+    box-shadow: 0 0 10px rgba(0,0,0,.1)
     background: #fff
     .heading
-        padding: 5px 20px
+        padding: 8px 20px
         background: $main
         color: #ffffff
         position: relative
@@ -242,17 +244,33 @@ main
         display: none
         box-shadow: 0 0 10px rgba(0,0,0,.2)
         li
+            padding: 0 20px
             a
+                font-size: 1rem
+                position: relative
+                padding: 6px 0
                 transition: .4s ease-in-out all
-                padding: 6px 20px
+                text-transform: uppercase
+                font-weight: 600
                 display: block
+                &::after
+                    content: ''
+                    transition: .4s all
+                    width: 0
+                    position: absolute
+                    left: 50%
+                    top: 100%
+                    transform: translateX(-50%)
+                    height: 2px
+                    background: $main
             &:hover, &.active
                 a
-                    background: $main
-                    color: #fff
+                    color: $main
+                    &::after
+                        width: 100%
+                    // background: $main
+                    // color: #fff
     @media(min-width: 1025px)
-        padding-top: 0
-        border-bottom: 1px solid #d5d5d5
         .heading
             display: none
         ul
@@ -261,6 +279,99 @@ main
             box-shadow: none
             li
                 display: inline-block
+.zone-nav
+    .heading
+        padding: 8px 20px
+        background: $main
+        color: #ffffff
+        position: relative
+        cursor: pointer
+        user-select: none
+        text-transform: uppercase
+        &.active
+            &::after
+                transform: translateY(-50%) rotate(180deg)
+    ul
+        display: none
+        box-shadow: 0 0 10px rgba(0,0,0,.2)
+        li
+            margin: 0 10px
+            a
+                font-size: 1.25rem
+                position: relative
+                padding: 6px 20px
+                padding-bottom: 8px
+                border: 1px solid $main
+                border-radius: 50px
+                transition: .4s ease-in-out all
+                font-weight: 500
+                display: block
+                &::after
+                    content: ''
+                    transition: .4s all
+                    width: 0
+                    position: absolute
+                    left: 50%
+                    top: 100%
+                    transform: translateX(-50%)
+                    height: 2px
+                    background: $main
+            &:hover, &.active
+                a
+                    color: #ffffff
+                    background: $main
+                    // background: $main
+                    // color: #fff
+    @media(min-width: 1025px)
+        .heading
+            display: none
+        ul
+            text-align: center
+            display: block!important
+            box-shadow: none
+            li
+                display: inline-block
+.project-item
+    figure
+        border-radius: 20px
+        overflow: hidden
+        border: 3px solid #fff
+        position: relative
+        .image
+            background: #000000
+            img
+                width: 100%
+                opacity: .6
+        figcaption
+            position: absolute
+            top: 0
+            left: 0
+            pointer-events: none
+            opacity: 0
+            width: 100%
+            height: 100%
+            transition: .4s ease-in-out all
+            background: rgba($main,.9)
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            text-align: center
+            color: #fff
+        .title
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            padding: 20px
+            color: #fff
+        &:hover
+            figcaption
+                opacity: 1
+                pointer-events: initial
+            .title
+                top: 100%
+                bottom: auto
 .main-description
     max-width: 710px
     margin: 0 auto
@@ -352,6 +463,34 @@ main
                 background: #fef9f4
                 h5, span
                     color: $extra
+.product-item
+    margin-bottom: 30px
+    figure
+        border-radius: 25px
+        overflow: hidden
+        border: 2px solid #fff
+        .image
+            padding: 40px
+            text-align: center
+            background: #e7f0e1
+            img
+                height: 130px
+        figcaption
+            transition: .4s ease-in-out all
+            background: #fff
+            text-align: center
+            padding: 10px
+            h5
+                font-size: 15px
+                transition: .4s ease-in-out all
+                color: $main
+                text-transform: uppercase
+                font-weight: 500
+        &:hover
+            figcaption
+                background: $main
+                h5
+                    color: #fff
 .swiper-navigation
     text-align: center
     .swiper-next, .swiper-prev
@@ -385,4 +524,46 @@ main
         .swiper-next
             left: calc(100% + 30px)        
         .swiper-prev
-            right: calc(100% + 30px)        
+            right: calc(100% + 30px) 
+
+.service-item
+    margin-bottom: 10px
+    figure
+        border-radius: 25px
+        border: 1px solid #fff
+        overflow: hidden
+        .image
+            img
+                width: 100%
+        figcaption
+            background: #fff
+            padding: 20px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            h5
+                display: flex
+                line-height: 1.2
+                align-items: center
+                transition: .4s ease-in-out all
+                justify-content: space-between
+                font-size: 1.25rem
+                &::after
+                    content: '\e876'
+                    font-family: Linearicons-Free
+                    font-size: +r(18px)
+                    color: $main
+                    padding-left: 1.125rem
+    &:hover
+        figure
+            figcaption
+                h5
+                    color: $main
+@media(min-width: 1025px)
+    .service-item:not(.big-item)
+        figure
+            .image
+                img
+                    max-height: 200px
+    .col-lg-custom
+        flex: 0 0 20%

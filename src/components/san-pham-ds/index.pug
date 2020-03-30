@@ -1,0 +1,54 @@
+section.san-pham-ds(setBackgroundRepeat='./img/home/bg-3.png').main-section   
+    .container
+        .category-list
+            .swiper-container
+                .swiper-wrapper
+                    -for(i=0;i<6;i++)
+                        .swiper-slide
+                            a(href="#")
+                                figure
+                                    .image
+                                        img(src="./img/san-pham/1.png", alt="")
+                                    figcaption
+                                        h5 Bơm định lượng
+                        .swiper-slide
+                            a(href="#")
+                                figure
+                                    .image
+                                        img(src="./img/san-pham/2.png", alt="")
+                                    figcaption
+                                        h5 Vi sinh nông nghiệp
+            .swiper-navigation
+                .swiper-prev
+                    img(src="./img/left.png", alt="")
+                .swiper-next
+                    img(src="./img/right.png", alt="")
+        .filter-wrap
+            .zone.form-group
+                label Loại sản phẩm
+                .select
+                    select
+                        option Vi sinh môi trường
+                        option Vi sinh môi trường
+                        option Vi sinh môi trường
+                        option Vi sinh môi trường
+            .sort.form-group
+                label Sắp xếp
+                .select
+                    select
+                        option Mới nhất
+                        option Cũ nhất
+                
+        .product-list-wrap
+            .row
+                -for(i=0;i<15;i++)
+                    .col-sm-6.col-md-4.col-lg-custom
+                        .product-item
+                            a(href="#")
+                                figure
+                                    .image
+                                        img(src="./img/home/3.png", alt="")
+                                    figcaption
+                                        h5 Bio Feeda
+        .text-center
+            a.main-btn.plus(href="#") Xem thêm

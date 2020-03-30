@@ -1,0 +1,76 @@
+footer
+    .footer-main
+        color: #fff
+        padding-bottom: 30px
+        @media(min-width: 1025px)
+            padding-bottom: 50px
+        .ft-col
+            margin-bottom: 20px
+            .ft-title
+                font-size: +r(18px)
+                text-transform: uppercase
+                font-weight: 600
+                margin-bottom: 10px
+                @media(min-width: 1025px)
+                    margin-bottom: 15px
+            ul
+                li
+                    margin-bottom: 5px
+                    font-size: +r(14px)
+                    transition: .4s all
+                    display: flex
+                    align-items: center
+                    &::before
+                        margin-right: 5px
+                        content: '+'
+                        display: inline-block
+                    a
+                        font-weight: 400
+                    &:hover
+                        transform: translateX(10px)
+    .footer-bottom
+        padding: 20px 0
+        text-align: center
+        .list-page-wrap
+            flex: 1
+            ul
+                li
+                    display: inline-block
+                    + li
+                        a
+                            border-left: 1px solid #d1d1d1
+                    a
+                        text-decoration: underline
+                        font-size: +r(13px)
+                        color: #9a9a9a
+                        padding: 0 6px
+        .social-wrap
+            padding: 20px 0
+            ul
+                li
+                    display: inline-block
+                    padding: 0 5px
+                    transition: .4s all
+                    a
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        border-radius: 50%
+                        background: #7fa865
+                        color: #fff
+                        width: 40px
+                        height: 40px
+                        font-size: +r(18px)
+                    &:hover
+                        transform: translateY(-5px)
+        .copyright-wrap
+            flex: 1
+            p
+                font-size: +r(13px)
+                color: #999
+        @media(min-width: 1025px)
+            .footer-wrap
+                padding: 0 50px
+                display: flex
+                align-items: center
+                justify-content: space-between

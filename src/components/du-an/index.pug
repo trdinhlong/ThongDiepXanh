@@ -1,0 +1,33 @@
+section.du-an.main-section
+    .container
+        h1.main-title.leaf.text-center.mb-1.mb-lg-2 Dự án
+        .zone-nav
+            .heading Danh mục
+            ul
+                li
+                    a(href="#") Dự án nước sạch
+                li
+                    a(href="#") Dự án nước thải
+                li
+                    a(href="#") Pin năng lượng mặt trời
+        .project-list-wrap
+            .row
+                -for(i=0;i<9;i++)
+                    .col-sm-6.col-lg-4
+                        .project-item
+                            figure
+                                .image
+                                    a(href="#")
+                                        img(src="./img/home/5.png", alt="")
+                                .title
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    
+                                figcaption
+                                    p
+                                        b Khu Dân Cư TM Phước Thái
+                                        br
+                                        span Cam Ranh, Nha Trang
+                                    a.main-btn.white.plus.mt-1(href="#") Xem chi tiết
