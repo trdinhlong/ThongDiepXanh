@@ -1,0 +1,28 @@
+.dich-vu
+    .main-wrapper
+        .wrapper
+            background: #fff
+            .content
+                padding: 30px
+                h2
+                    font-size: +r(30px)
+                    margin-bottom: 10px
+                p
+                    font-size: +r(18px)
+                a
+                    margin-top: 20px
+            .image
+                img
+                    height: 100%
+                    width: 100%
+    @media(min-width: 1025px)
+        .main-wrapper
+            .wrapper
+                display: flex
+                &>div
+                    flex: 0 0 50%
+                .content
+                    padding: 50px
+                &:nth-child(odd)
+                    .image
+                        order: 2

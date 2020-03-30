@@ -1,0 +1,31 @@
+section.tin-tuc.main-section(setBackgroundRepeat='./img/home/bg-3.png')
+    .container
+        h1.main-title.leaf.text-center.mb-1.mb-lg-2 Tin tức
+        .zone-nav
+            .heading Danh mục
+            ul
+                li
+                    a(href="#") Tin tổng hợp
+                li
+                    a(href="#") Tin công ty
+        .news-list-wrap
+            .row
+                -for(i=0;i<3;i++)
+                    .col-sm-6.col-lg-4
+                        .news-item
+                            a(href="#")
+                                figure
+                                    .image
+                                        img(src="./img/tin-tuc/1.png", alt="")
+                                    figcaption
+                                        time 24.10.1999
+                                        h5 Khủng hoảng rác thải nhựa
+                    .col-sm-6.col-lg-4
+                        .news-item
+                            a(href="#")
+                                figure
+                                    .image
+                                        img(src="./img/tin-tuc/1.png", alt="")
+                                    figcaption
+                                        time 24.10.1999
+                                        h5 Tái chế rác thải nhựa làm đường, Dow lọt top cty “Thay đổi Thế giới'
