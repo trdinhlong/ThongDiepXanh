@@ -230,6 +230,25 @@ function toggleNavigation() {
         $(this).siblings().slideToggle()
     })
 }
+function mappingElement(){
+    // Zone Select
+    if ($('.zone.form-group').length) {
+        $('.zone.form-group').prependTo($('.san-pham-ds .filter-wrap'))
+        
+    }
+    if ($('.product-detail-page .policy-wrap').length) {
+        $('.product-detail-page .policy-wrap').insertBefore( $('.san-pham-ct-1 .product-related'))
+    }
+}
+
+function rescruitmentPopup() {
+    $('.tuyen-dung-ct  a.apply').on('click', function() {
+        $('.tuyen-dung-ct .popup-wrapper').addClass('active')
+    })
+    $('.tuyen-dung-ct .popup-wrapper .close-button').on('click', function() {
+        $(this).parents('.popup-wrapper').removeClass('active')
+    })
+}
 $(document).ready(function() {
     initMapping()
     initSlider()
@@ -240,5 +259,7 @@ $(document).ready(function() {
     toggleNavigation()
     textViewMore()
     productTab()
+    mappingElement()
+    rescruitmentPopup()
 })
 $(window).resize(function() {})

@@ -3,7 +3,7 @@
 	overflow-x: hidden
 	color: $text
 	line-height: 1.5
-	font-family: 'Roboto'
+	font-family: 'Koho'
 	margin: 0
 	>div
 		width: 100%
@@ -49,7 +49,7 @@
 	h4
 		font-size: +r(24px)
 		font-weight: 600
-		color: $extra
+		color: $main
 		text-transform: uppercase
 		margin-bottom: 20px
 		@media (min-width: 992px)
@@ -73,9 +73,8 @@
 		font-size: 14px
 		border-radius: 5px
 		padding: 8px 15px
-		font-family: 'Bai Jamjuree',sans-serif
 		&:focus
-			border-color: $extra
+			border-color: $main
 			outline: none
 	input[type="text"],input[type="password"]
 		// height: 50px
@@ -87,7 +86,7 @@
 		.ruFileWrap
 			position: relative
 			display: block
-			height: 50px
+			height: auto
 		.ruFileInput, .ruBrowse
 			width: 120px
 			height: 30px
@@ -110,14 +109,15 @@
 		text-align: left
 		input[type="submit"]
 			height: 40px
+			border-radius: 50px
+			border-bottom-right-radius: 0
 			width: 100%
 			max-width: 180px
 			display: inline-flex
 			justify-content: center
 			align-items: center
-			border-radius: 0
 			border: 0
-			background: #ed7d31
+			background: $main
 			color: #fff
 			text-transform: uppercase
 	.RadUpload
@@ -198,7 +198,7 @@
 		top: 1px
 		align-items: center
 		justify-content: center
-		background: $extra
+		background: $main
 		width: 50px
 		height: 50px
 		cursor: pointer
