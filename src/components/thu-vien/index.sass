@@ -1,0 +1,64 @@
+.thu-vien
+    .item
+        margin-bottom: 30px
+        figure
+            overflow: hidden
+            border-radius: 60px
+            border-bottom-left-radius: 0
+            position: relative
+            .image
+                position: relative
+                +img-scale(190/290*100%)
+                img
+                    width: 100%
+                &::after
+                    content: ''
+                    width: 100%
+                    height: 50%
+                    background: linear-gradient(to top, rgba(#000,.3), transparent)
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    pointer-events: none
+            .title
+                position: absolute
+                bottom: 0
+                left: 0
+                padding: 10px 20px
+                z-index: 3
+                color: #fff
+                font-size: +r(18px)
+                font-weight: 400
+            figcaption
+                position: absolute
+                top: 0
+                opacity: 0
+                pointer-events: none
+                left: 0
+                width: 100%
+                height: 100%
+                transition: .4s all
+                background: rgba($main,.7)
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                color: #fff
+                h2
+                    font-size: +r(18px)
+            &:hover
+                .title
+                    opacity: 0
+                figcaption
+                    opacity: 1
+        &.big-image
+            height: calc(100% - 30px)
+            figure
+                height: 100%
+                border-radius: 100px
+                border-bottom-left-radius: 0
+                .image
+                    height: 100%
+                figcaption
+                    h2
+                        font-size: +r(30px)

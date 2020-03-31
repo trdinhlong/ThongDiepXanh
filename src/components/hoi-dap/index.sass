@@ -3,6 +3,63 @@
         counter-reset: item-couter
     .question-item
         .heading
+            font-size: +r(18px)
+            cursor: pointer
+            font-weight: 500
+            padding: 12px 20px
+            border-bottom: 1px solid #f1f1f1
             &:before
                 counter-increment: item-couter
                 content: counter(item-couter) ". "
+            &.active
+                border-color: $main
+                color: $main
+                font-weight: 700
+        .content
+            border-bottom: 1px solid $main
+            padding: 15px 10px
+            display: none
+            margin-bottom: 15px
+            p
+                display: flex
+                font-size: +r(18px)
+                &::before
+                    content: '-'
+                    display: inline-block
+                    margin-right: 10px
+                + p
+                    margin-top: 20px
+    .form-wrap
+        padding: 30px
+        margin-top: 30px
+        border: 1px solid $main
+        @media(min-width: 1025px)
+            margin-top: 0
+        h2
+            font-size: +r(24px)
+            color: $main
+
+    .form-wrap
+        h2
+            margin-bottom: 20px
+        .form-group
+            margin-bottom: 25px
+            input[type='text'], textarea
+                width: 100%
+                padding: 8px 20px
+                border-radius: 50px
+                border: 1px solid #d1d1d1
+            textarea
+                border-radius: 10px
+            label,.frm-btn-reset
+                display: none
+            .frm-btn-submit
+                border: none
+                border-radius: 40px
+                border-bottom-right-radius: 0
+                background: #1f9a01
+                padding: 12px 60px
+                color: #fff
+                font-size: 14px
+                font-weight: 600
+                text-transform: uppercase

@@ -8,23 +8,24 @@
         justify-content: center
         li
             margin: 0 5px
-            color: #333333
+            color: $main
             &:last-child
                 margin-right: 0
             a, span
-                font-size: 13px
-                width: 38px
-                color: #333
-                height: 38px
+                font-size: 18px
+                width: 55px
+                color: $main
+                height: 55px
                 display: flex
+                border: 1px solid $main
                 border-radius: 50%
                 justify-content: center
                 align-items: center
                 box-shadow: 0 0 0 0px #ed7d31
                 transition: .4s ease-in-out all
-            // .LastPage, .NextPage, .BackPage, .FirstPage
-                // display: none
+            .LastPage, .NextPage, .BackPage, .FirstPage
+                display: none
             &.active, &:hover
                 a, span
-                    color: #ed7d31
-                    box-shadow: 0 0 0 2px #ed7d31
+                    background: $main
+                    color: #fff
