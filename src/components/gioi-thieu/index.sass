@@ -14,6 +14,26 @@
             @media(min-width: 576px)
                 border-top-right-radius: 250px
                 border-bottom-left-radius: 250px
+            @media(min-width: 1025px)
+                position: relative
+                &:before
+                    content: ''
+                    width: 150px
+                    height: 1px
+                    background: #ffffff
+                    position: absolute
+                    right: -40px
+                    bottom: 35px
+                    transform: rotate(45deg)
+                &:after
+                    content: ''
+                    width: 150px
+                    height: 1px
+                    background: #ffffff
+                    position: absolute
+                    left: -40px
+                    top: 35px
+                    transform: rotate(45deg)
         .small-image
             flex: 1
             border-top-left-radius: 50px
@@ -22,10 +42,32 @@
                 border-top-left-radius: 140px
                 border-bottom-right-radius: 140px
             box-shadow: 6px 6px $main
+            @media(min-width: 1025px)
+                position: relative
+                &:before
+                    content: ''
+                    width: 90px
+                    height: 1px
+                    background: #ffffff
+                    position: absolute
+                    left: -40px
+                    bottom: 5px
+                    transform: rotate(-45deg)
+                &:after
+                    content: ''
+                    width: 90px
+                    height: 1px
+                    background: #ffffff
+                    position: absolute
+                    right: -40px
+                    top: 5px
+                    transform: rotate(-45deg)
         .big-image, .small-image
             // margin: 0 10px
             border: 2px solid #fff
             overflow: hidden
+            @media(min-width: 1025px)
+                margin: 0 5px
             img
                 width: 100%
             // +img-scale(100%)

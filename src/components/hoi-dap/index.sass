@@ -1,0 +1,8 @@
+.hoi-dap
+    .question-list
+        counter-reset: item-couter
+    .question-item
+        .heading
+            &:before
+                counter-increment: item-couter
+                content: counter(item-couter) ". "
