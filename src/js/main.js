@@ -177,7 +177,22 @@ function initSlider() {
         }
     });
 }
+function ProcessAjax(pageurl) {
+    //to get the ajax content and display in div with id 'content'
+    $.ajax({ url: pageurl, data: { isajax: true }, success: function (data) {
+        $('.ajaxresponse').html($(data).find('.ajaxresponse').html());
+        $('.ajaxfilterresponse').html($(data).find('.ajaxfilterresponse').html());
+        $('.ajaxbrandresponse').html($(data).find('.ajaxbrandresponse').html());
+        $('.productpager').remove();
+        $(data).find('.productpager').insertAfter($('.ajaxresponse'));
+    }
+    });
 
+    //to change the browser URL to 'pageurl'
+    if (pageurl != window.location) {
+        window.history.pushState({ path: pageurl }, '', pageurl);
+    }
+}
 function initHeight() {
     App.equalHeightElement('.home-2 .service-item figure figcaption')
 }
@@ -263,10 +278,28 @@ function questionAccordion() {
     })
 }
 
-function loadPageBySelect() {
+function loadDataAjax() {
     $('.zone.form-group select, .sort.form-group select').on('change', function() {
         let i = $(this).val()
-        window.location = i
+        ProcessAjax(i)
+    })
+    $('.san-pham-ds .main-btn.plus').on('click',function(){
+        let pageurl = $(this).attr('data-url')
+        $.ajax({ url: pageurl, data: { isajax: true }, success: function (data) {
+            console.log(data)
+            let el = $(data).find('.product-item').parent()
+            let nextUrl = $(data).find('.main-btn.plus').attr('data-url')
+            el.each(function(){
+                $(this).appendTo($('.san-pham-ds .ajaxresponse>div'))
+            })
+            if (nextUrl != '') {
+                $('.san-pham-ds .main-btn.plus').attr('data-url', nextUrl)
+            }
+            else{
+                $('.san-pham-ds .main-btn.plus').hide()
+            }
+        }
+        });
     })
 }
 
@@ -288,7 +321,7 @@ $(document).ready(function() {
     textViewMore()
     productTab()
     mappingElement()
-    loadPageBySelect()
+    loadDataAjax()
     rescruitmentPopup()
     questionAccordion()
     scrollToSection()
