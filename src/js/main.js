@@ -269,6 +269,14 @@ function loadPageBySelect() {
         window.location = i
     })
 }
+
+function scrollToSection() {
+    $('.main-navigation ul li').on('click', function() {
+        let sectionId = $(this).find('a').attr('data-scroll')
+        let sectionOffset = $(`section[data-id='${sectionId}']`).offset().top - $('header').outerHeight()
+        App.scrollTo(sectionOffset)
+    })
+}
 $(document).ready(function() {
     initMapping()
     initSlider()
@@ -283,5 +291,6 @@ $(document).ready(function() {
     loadPageBySelect()
     rescruitmentPopup()
     questionAccordion()
+    scrollToSection()
 })
 $(window).resize(function() {})

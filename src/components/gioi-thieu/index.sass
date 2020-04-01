@@ -1,5 +1,12 @@
 .gioi-thieu-1
     position: relative
+    background: #f5f5f5
+    &::before
+        content: url('/Data/Sites/1/media/img/home/after.png')
+        position: absolute
+        filter: grayscale(1)
+        right: 0
+        bottom: 0
     .image-wrap
         display: flex
         align-items: flex-end
@@ -90,7 +97,7 @@
                 + p
                     margin-top: 20px
     &::before
-        content: url('../img/home/after.png')
+        content: url('/Data/Sites/1/media/img/home/after.png')
         position: absolute
         filter: grayscale(1)
         right: 0
