@@ -74,3 +74,27 @@ footer
                 display: flex
                 align-items: center
                 justify-content: space-between
+    .gallery-wrap
+        &>div
+            margin: 0 -2.5px
+            &>div
+                padding: 0 2.5px
+        .item
+            position: relative
+            margin-bottom: 5px
+            .image
+                +img-scale(50/80*100%)
+                img
+                    width: 100%
+            .ic
+                pointer-events: none
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+        .video
+            height: calc(100% - 5px)
+            figure
+                height: 100%
+                .image
+                    height: 100%
