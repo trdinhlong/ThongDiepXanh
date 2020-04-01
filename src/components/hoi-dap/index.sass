@@ -53,6 +53,17 @@
                 border-radius: 10px
             label,.frm-btn-reset
                 display: none
+            .frm-btn
+                display: inline-block
+                position: relative
+                &:after
+                    content: url('/Data/Sites/1/media/img/right.png')
+                    filter: brightness(0) invert(1)
+                    position: absolute
+                    left: 95px
+                    line-height: 1
+                    top: 50%
+                    transform: translateY(-50%)
             .frm-btn-submit
                 border: none
                 border-radius: 40px
@@ -63,3 +74,4 @@
                 font-size: 14px
                 font-weight: 600
                 text-transform: uppercase
+                padding-right: 70px

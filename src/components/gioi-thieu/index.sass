@@ -127,8 +127,12 @@
                 figure
                     height: 100%
                     .image
-                        height: 100%
-                        max-height: 482px
+                        @media(min-width: 1025px)
+                            height: 100%
+                            max-height: 396px
+                        @media(min-width: 1200px)
+                            height: 100%
+                            max-height: 482px
                         img
                             height: 100%
                     figcaption

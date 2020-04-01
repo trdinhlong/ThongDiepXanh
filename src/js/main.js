@@ -214,10 +214,16 @@ function toggleMenu() {
 }
 
 function textViewMore() {
-    if ($('.san-pham-ct-1 .product-description .nav-content .content').height() > 600) {
-        $('.san-pham-ct-1 .product-description .nav-content .content').addClass('viewmore')
+    if ($('.dich-vu-ct-1 .secvice-description .content').height() > 600) {
+        $('.dich-vu-ct-1 .secvice-description .content').addClass('viewmore')
         $('.san-pham-ct-1 .product-description .nav-content .content.viewmore .btn-viewmore').on('click', function() {
             $(this).parent().removeClass('viewmore')
+        })
+    }
+    if ($('.dich-vu-ct-1 .secvice-description .content').height() > 350) {
+        $('.dich-vu-ct-1 .secvice-description .content').addClass('viewmore')
+        $('.dich-vu-ct-1 .secvice-description .content.viewmore .btn-viewmore').on('click', function() {
+            $(this).parents('.content').removeClass('viewmore')
         })
     }
 }
@@ -230,6 +236,7 @@ function productTab() {
         $(this).addClass('active')
         $(`.san-pham-ct-1 .product-description .nav-content .item`).removeClass('active')
         $(`.san-pham-ct-1 .product-description .nav-content .item[data-item='${e}']`).addClass('active')
+        textViewMore()
     })
     $('.san-pham-ct-1 .product-description .nav-tab .item:first-child').trigger('click')
 }
@@ -295,15 +302,36 @@ function loadDataAjax() {
             data: { isajax: true },
             success: function(data) {
                 console.log(data)
-                let el = $(data).find('.product-item').parent()
+                let el = $(data).find('.project-item').parent()
                 let nextUrl = $(data).find('.main-btn.plus').attr('data-url')
                 el.each(function() {
                     $(this).appendTo($('.san-pham-ds .ajaxresponse>div'))
                 })
-                if (nextUrl != '') {
+                if (nextUrl != '' && nextUrl != undefined) {
                     $('.san-pham-ds .main-btn.plus').attr('data-url', nextUrl)
                 } else {
                     $('.san-pham-ds .main-btn.plus').hide()
+                }
+            }
+        });
+    })
+    $('.du-an .main-btn.plus.btn-viewmore').on('click', function() {
+        let pageurl = $(this).attr('data-url')
+        $.ajax({
+            url: pageurl,
+            data: { isajax: true },
+            success: function(data) {
+                console.log(data)
+                let el = $(data).find('.project-item').parent()
+                let nextUrl = $(data).find('.main-btn.plus').attr('data-url')
+                el.each(function() {
+                    $(this).appendTo($('.du-an .ajaxresponse>.row'))
+                })
+                console.log(nextUrl)
+                if (nextUrl != '' && nextUrl != undefined) {
+                    $('.du-an .main-btn.plus.btn-viewmore').attr('data-url', nextUrl)
+                } else {
+                    $('.du-an .main-btn.plus.btn-viewmore').hide()
                 }
             }
         });
@@ -329,6 +357,35 @@ function servicePopup() {
         $(this).parents('.popup-wrap').removeClass('active')
     })
 }
+
+function prodcutContactPopup() {
+    $('.san-pham-ct-1 .product-info .main-btn, .dich-vu-ct-1 .service-intro .text-wrap .main-btn').on('click', function() {
+        $('.product-contact-wrapper').addClass('active')
+        let title = $('h1').text()
+        $('.popup-product-name input').val(title)
+        $('.popup-product-name input').attr('disabled', true)
+    })
+    $('.product-contact-wrapper .popup-main .close-button, .product-contact-wrapper .popup-overlay').on('click', function() {
+        $(this).parents('.product-contact-wrapper').removeClass('active')
+    })
+}
+
+function socialShare() {
+    let link = window.location.href
+    $('.fb-share').attr('href', `https://facebook.com/sharer/sharer.php?u=${link}`)
+    $('.in-share').attr('href', `http://www.linkedin.com/shareArticle?mini=true&url=${link}`)
+    $('.mail-share').attr('href', `mailto:?subject=I wanted you to see this site&amp;body=Check out this site ${link}.`)
+    $('.tw-share').attr('href', `https://twitter.com/intent/tweet?url=${link}`)
+    $('.pr-share').on('click', function() {
+        window.print()
+    })
+}
+
+function toggleDocumentPage() {
+    $('.sidebar-wrap .heading').on('click', function() {
+        $(this).siblings().slideToggle()
+    })
+}
 $(document).ready(function() {
     initMapping()
     initSlider()
@@ -345,5 +402,40 @@ $(document).ready(function() {
     questionAccordion()
     scrollToSection()
     servicePopup()
+    prodcutContactPopup()
+    socialShare()
+    toggleDocumentPage()
+    $('[data-fancybox').fancybox({
+        thumbs: {
+            autoStart: true,
+            axis: 'x'
+        }
+    });
+    if ($('.san-pham-ds .filter-wrap').length) {
+
+        let filterOffset = $('.san-pham-ds .filter-wrap').offset().top - $('header').outerHeight()
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > filterOffset) {
+                $('.san-pham-ds .filter-wrap').addClass('fixed')
+            } else {
+
+                $('.san-pham-ds .filter-wrap').removeClass('fixed')
+            }
+        })
+    }
+    if ($('.tai-lieu .sidebar-wrap').length) {
+
+        let sidebarOffset = $('.tai-lieu .sidebar-wrap').offset().top - $('header').outerHeight()
+        $(window).on('scroll', function() {
+
+            if ($(window).scrollTop() > sidebarOffset) {
+                $('.tai-lieu .sidebar-wrap').addClass('fixed')
+            } else {
+                $('.tai-lieu .sidebar-wrap').removeClass('fixed')
+            }
+
+        })
+    }
+
 })
 $(window).resize(function() {})

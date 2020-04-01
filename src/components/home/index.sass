@@ -89,7 +89,12 @@
         text-align: center
         margin: 0 -5px
         .tab-nav
+            display: flex
+            overflow-x: auto
+            @media(min-width: 400px)
+                justify-content: center
             .item
+                white-space: nowrap
                 display: inline-block
                 font-size: 14px
                 padding: 10px 20px

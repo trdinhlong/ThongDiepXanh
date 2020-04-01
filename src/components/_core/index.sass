@@ -617,11 +617,35 @@ main
             &:hover, &.active
                 a
                     color: $main
+    @media(max-width: 1025px)
+        ul
+            display: none
+        .heading
+            position: relative
+            &:after
+                content: "\f140"
+                font: normal normal normal 24px/1 Material Design Icons
+                position: absolute
+                right: 20px
+                top: 50%
+                transform: translateY(-50%)
+        &.fixed
+            margin-top: 5px
+            position: fixed
+            max-width: 710px
+            z-index: 3
+            left: 50%
+            transform: translateX(-50%)
+            top: 60px
+            width: calc(100% - 30px)
 .productpage 
     .policy-wrap
         display: none
 .product-detail-page
     .productdetailpager
+        display: none
+.du-an
+    .newspager
         display: none
 .news-detail-page
     .banner-section
@@ -681,6 +705,8 @@ main
         .popup-image
             overflow: hidden
             max-height: 200px
+            border-top-left-radius: 30px
+            border-bottom-left-radius: 30px
             img
                 height: 100%
                 width: 100%
@@ -726,3 +752,140 @@ main
             .close-button
                 left: 100%
                 right: auto
+.product-contact-wrapper
+    position: fixed
+    top: 0
+    opacity: 0
+    pointer-events: none
+    left: 0
+    z-index: 333
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100vw
+    padding: 10px
+    transition: .4s all
+    &.active
+        opacity: 1
+        pointer-events: initial
+    .popup-overlay
+        height: 100%
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background: rgba(#000,.8)
+    .popup-main
+        max-width: 1000px
+        width: 100%
+        max-height: 600px
+        border-radius: 10px
+        overflow: hidden
+        background: #fff
+        position: relative
+        overflow-y: auto
+        z-index: 33
+        .close-button
+            position: relative
+            width: 50px
+            font-size: 30px
+            height: 50px
+            display: flex
+            align-items: center
+            justify-content: center
+            // background: $main
+            color: #999
+            position: absolute
+            top: 0
+            right: 0
+        .popup-image
+            overflow: hidden
+            max-height: 200px
+            border-top-left-radius: 30px
+            border-bottom-left-radius: 30px
+            img
+                height: 100%
+                width: 100%
+        .popup-content
+            padding: 20px
+            max-height: 100%px
+            h5
+                font-size: 18px
+                margin-bottom: 10px
+                text-transform: uppercase
+                color: $main
+                text-decoration: underline
+            p
+                margin-bottom: 15px
+                &:last-child
+                    margin-bottom: 0
+    @media(min-width: 768px)
+        .popup-main
+            overflow: initial
+            display: flex
+            .popup-image
+                height: 100%
+                flex: 0 0 40%
+                max-height: initial
+                img
+                    height: 100%
+                    width: 100%
+            .popup-content
+                align-self: center
+                padding: 50px
+                max-height: 450px
+                overflow-y: auto
+                margin-right: 50px
+                &::-webkit-scrollbar
+                    border-radius: 5px
+                    width: 3px
+                &::-webkit-scrollbar-track
+                    background: #d7d7d7
+                &::-webkit-scrollbar-thumb
+                    background: $main
+.fancybox-toolbar div
+    display: inline-block
+    height: 44px
+    line-height: 42px
+    background: rgba(30, 30, 30, 0.6)
+    color: #ccc
+    font-size: 12px
+    font-weight: bold
+    min-width: 42px
+    text-align: center
+    white-space: nowrap
+
+@media all and (min-width: 800px)
+    .fancybox-thumbs
+        top: auto
+        width: auto
+        bottom: 0
+        left: 0
+        right: 0
+        height: 95px
+        padding: 10px 10px 0 10px
+        box-sizing: border-box
+        background: rgba(0, 0, 0, 0.3)
+
+    .fancybox-show-thumbs .fancybox-inner
+        right: 0
+        bottom: 95px
+        overflow: visible
+
+    .fancybox-thumbs
+        &::-webkit-scrollbar
+            height: 7px
+
+        &::-webkit-scrollbar-track
+            background: #2a2a2a
+            border-radius: 10px
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+
+        &::-webkit-scrollbar-thumb
+            background: #ccc
+            border-radius: 10px
+iframe[title='chat widget']
+    bottom: 100px!important
+.fancybox-close-small
+    color: #fff!important

@@ -34,6 +34,7 @@
             border-top-right-radius: 20px
         .content
             border-top: 1px solid #d1d1d1
+            position: relative
             padding: 15px 0 0
             p
                 margin-bottom: 15px
@@ -52,11 +53,39 @@
                             font-weight: 700
                     &:nth-child(even)
                         background: #f0faef
-        .btn-viewmore
-            display: inline-flex
-            font-size: +r(24px)
-            color: $main
+            .btn-viewmore
+                display: inline-flex
+                font-size: +r(24px)
+                color: $main
+                position: absolute
+                bottom: 0
+                z-index: 33
+                margin-top: 20px
+                align-items: center
+                em
+                    margin-left: 10px
+                display: none
+            &.viewmore
+                max-height: 600px
+                overflow: hidden
+                &:after
+                    content: ''
+                    height: 300px
+                    width: 100%
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    background: linear-gradient(to top, rgba(#fff,1), transparent)
+        
+                .btn-viewmore
+                    display: inline-flex
+    .d-mb-flex
+        @media(max-width: 1025px)
             margin-top: 20px
-            align-items: center
-            em
-                margin-left: 10px
+            border-top: 1px solid #d1d1d1
+            display: flex
+            .hotline
+                border: 0!important
+            .main-btn
+                margin-left: 30px
+                padding: 8px 30px!important
