@@ -1,5 +1,5 @@
-.home-4
-    .form-wrapper
+.lien-he
+    .form-wrap
         .wrap-form
             @media(min-width: 10215px)
                 margin-top: 0
@@ -7,19 +7,20 @@
                 width: 100%
                 padding: 12px 20px
                 font-size: 14px
-                border-radius: 4px
-                border: 1px solid #f9e3cf
+                background: #e7f0e1
+                border-radius: 40px
+                border: 1px solid #d7d7d7
                 color: #333333
-                caret-color: #eb7d3c
-                &:placeholder
-                    color: #999999
-                    font-style: italic
+                caret-color: $main
+                &::placeholder
+                    color: #666
                 &:focus
                     outline: none
-                    border-color: $extra
+                    border-color: $main
                     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3)
             textarea
-                height: 170px
+                height: 90px
+                border-radius: 10px
             &>div
                 display: flex
                 flex-wrap: wrap
@@ -29,6 +30,8 @@
                     flex: 0 0 50%
                     margin-bottom: 20px
                     @media(max-width: 768px)
+                        flex: 0 0 100%
+                    &.w-100
                         flex: 0 0 100%
                 .qparagraph
                     flex: 0 0 100%
@@ -100,13 +103,14 @@
                     margin-top: 2px
                     width: 100%
                     padding: 12px 30px
-                    background: $extra
+                    background: $main
                     width: 100%
                     color: #fff
                     font-weight: 600
                     font-size: 14px
                     border-radius: 40px
                     border: none
+                    border-bottom-right-radius: 0
                     text-transform: uppercase
             @media(min-width: 768px)
                 .frm-captcha

@@ -230,14 +230,15 @@ function toggleNavigation() {
         $(this).siblings().slideToggle()
     })
 }
-function mappingElement(){
+
+function mappingElement() {
     // Zone Select
     if ($('.zone.form-group').length) {
         $('.zone.form-group').prependTo($('.san-pham-ds .filter-wrap'))
-        
+
     }
     if ($('.product-detail-page .policy-wrap').length) {
-        $('.product-detail-page .policy-wrap').insertBefore( $('.san-pham-ct-1 .product-related'))
+        $('.product-detail-page .policy-wrap').insertBefore($('.san-pham-ct-1 .product-related'))
     }
 }
 
@@ -247,6 +248,25 @@ function rescruitmentPopup() {
     })
     $('.tuyen-dung-ct .popup-wrapper .close-button').on('click', function() {
         $(this).parents('.popup-wrapper').removeClass('active')
+    })
+}
+
+function questionAccordion() {
+    $('.hoi-dap .question-item .heading').on('click', function() {
+        if ($(this).siblings().is(':hidden')) {
+            $(this).siblings().slideDown()
+            $(this).addClass('active')
+        } else {
+            $(this).siblings().slideUp()
+            $(this).removeClass('active')
+        }
+    })
+}
+
+function loadPageBySelect() {
+    $('.zone.form-group select, .sort.form-group select').on('change', function() {
+        let i = $(this).val()
+        window.location = i
     })
 }
 $(document).ready(function() {
@@ -260,6 +280,8 @@ $(document).ready(function() {
     textViewMore()
     productTab()
     mappingElement()
+    loadPageBySelect()
     rescruitmentPopup()
+    questionAccordion()
 })
 $(window).resize(function() {})

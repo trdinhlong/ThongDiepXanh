@@ -3,28 +3,40 @@
     margin-top: 15px
     position: relative
     // padding: 6px 10px
+    &::after
+        content: '\F48A'
+        font: normal normal normal 24px/1 Material Design Icons
+        position: absolute
+        line-height: 37px
+        right: 25px
+        font-size: 18px
+        pointer-events: none
+        color: $main
+        top: 0
     input
-        padding: 10px 15px
-        background: none
+        background: #fff
+        padding: 8px 15px
         border: 0
         border-radius: 50px
-        border: 2px solid #e1e1e1
         font-size: 13px
         width: 99%
+        font-size: +r(14px)
         padding-right: 70px
         color: #999999
-        &:placeholder
+        &::placeholder
             font-size: 13px
             color: #999999
+            font-style: italic
     button
+        opacity: 0
         padding: 6px 20px
-        height: 45px
         position: absolute
         top: 0
         right: 0
         background: none
         border: 0
         color: #eb7d3c
+
     input, button
         &:focus
             outline: none
